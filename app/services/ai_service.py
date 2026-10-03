@@ -27,8 +27,11 @@ class AIService:
             'model': self.model,
             'messages': mesajlar,
             'temperature': 0.7,
-            'max_tokens': 400,
-        }
+               'max_tokens': 1024,
+           }
+           # gpt-oss icin dusunme suresini kisa tut
+           if 'gpt-oss' in self.model:
+               govde['reasoning_effort'] = 'low'        }
 
         try:
             cevap = requests.post(GROQ_URL, headers=basliklar, json=govde, timeout=30)
