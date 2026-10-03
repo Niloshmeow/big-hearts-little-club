@@ -1,0 +1,3 @@
+# Geliştirme ve test için ek paketler (Render'da gerekmez).
+-r requirements.txt
+pytest==8.3.3
